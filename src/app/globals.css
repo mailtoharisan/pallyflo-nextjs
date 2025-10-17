@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Pallyflo Brand Colors - Exact from documentation */
+  --brand-primary: #05204D;
+  --brand-secondary: #FF9A1F;
+  --brand-light: #DADFE7;
+  --brand-dark: #1D2839;
+  --brand-gray: #606E85;
+  --brand-light-gray: #E5E7EB;
+  --brand-medium-gray: #D1D5DB;
+  
+  --background: #ffffff;
+  --foreground: #1D2839;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-light: var(--brand-light);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-gray: var(--brand-gray);
+  --color-brand-light-gray: var(--brand-light-gray);
+  --color-brand-medium-gray: var(--brand-medium-gray);
+  --font-sans: 'Montserrat', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Brand-specific utility classes */
+.bg-brand-primary { background-color: var(--brand-primary); }
+.bg-brand-secondary { background-color: var(--brand-secondary); }
+.bg-brand-light { background-color: var(--brand-light); }
+.bg-brand-dark { background-color: var(--brand-dark); }
+.bg-brand-gray { background-color: var(--brand-gray); }
+.bg-brand-light-gray { background-color: var(--brand-light-gray); }
+.bg-brand-medium-gray { background-color: var(--brand-medium-gray); }
+
+.text-brand-primary { color: var(--brand-primary); }
+.text-brand-secondary { color: var(--brand-secondary); }
+.text-brand-light { color: var(--brand-light); }
+.text-brand-dark { color: var(--brand-dark); }
+.text-brand-gray { color: var(--brand-gray); }
+.text-brand-light-gray { color: var(--brand-light-gray); }
+.text-brand-medium-gray { color: var(--brand-medium-gray); }
+
+.border-brand-primary { border-color: var(--brand-primary); }
+.border-brand-secondary { border-color: var(--brand-secondary); }
+.border-brand-light { border-color: var(--brand-light); }
+.border-brand-dark { border-color: var(--brand-dark); }
+.border-brand-gray { border-color: var(--brand-gray); }
+.border-brand-light-gray { border-color: var(--brand-light-gray); }
+.border-brand-medium-gray { border-color: var(--brand-medium-gray); }
+
+/* Gradient backgrounds */
+.bg-gradient-subtle {
+  background: linear-gradient(135deg, var(--brand-light) 0%, var(--brand-light-gray) 100%);
+}
+
+/* Typography hierarchy */
+.text-hero {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.text-section-title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.text-subsection-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.text-body-large {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.text-body {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.text-body-small {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
