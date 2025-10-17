@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { ArrowRight, Globe, Users, Award } from "lucide-react"
+import { Globe, Users, Award } from "lucide-react"
 
 export default function Home() {
   return (
@@ -30,7 +30,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-subsection-title text-brand-primary mb-2">Trusted Partner</h3>
@@ -38,14 +38,14 @@ export default function Home() {
               <p className="text-body-small text-brand-gray">Established reputation in global trade</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Globe className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-subsection-title text-brand-primary mb-2">9+ Countries</h3>
               <p className="text-brand-gray">International market presence</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-subsection-title text-brand-primary mb-2">50+ Clients</h3>
@@ -90,7 +90,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Globe className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-subsection-title text-brand-primary mb-3">Global Trading Solutions</h3>
@@ -99,7 +99,7 @@ export default function Home() {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-subsection-title text-brand-primary mb-3">Quality Assurance</h3>
@@ -108,7 +108,7 @@ export default function Home() {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-subsection-title text-brand-primary mb-3">Trusted Partnerships</h3>
@@ -117,7 +117,7 @@ export default function Home() {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Globe className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-subsection-title text-brand-primary mb-3">Market Expertise</h3>
@@ -141,7 +141,12 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center p-6 border border-brand-light-gray rounded-lg hover:shadow-lg transition-shadow">
+            <div className="text-center p-6 border-2 border-brand-secondary rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
+              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                </svg>
+              </div>
               <h3 className="text-subsection-title text-brand-primary mb-3">Our Products</h3>
               <p className="text-body text-brand-gray mb-4">
                 Explore our comprehensive range of premium agro-commodities including pulses, grains, and oil seeds.
@@ -150,7 +155,12 @@ export default function Home() {
                 <Link href="/products">View Products</Link>
               </Button>
             </div>
-            <div className="text-center p-6 border border-brand-light-gray rounded-lg hover:shadow-lg transition-shadow">
+            <div className="text-center p-6 border-2 border-brand-secondary rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
+              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
               <h3 className="text-subsection-title text-brand-primary mb-3">Our Services</h3>
               <p className="text-body text-brand-gray mb-4">
                 Discover our end-to-end trading solutions from market research to global logistics and delivery.
@@ -159,7 +169,10 @@ export default function Home() {
                 <Link href="/services">Learn More</Link>
               </Button>
             </div>
-            <div className="text-center p-6 border border-brand-light-gray rounded-lg hover:shadow-lg transition-shadow">
+            <div className="text-center p-6 border-2 border-brand-secondary rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
+              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-white" />
+              </div>
               <h3 className="text-subsection-title text-brand-primary mb-3">Join Our Team</h3>
               <p className="text-body text-brand-gray mb-4">
                 Build your career with a global leader in agro-commodities trading. Explore exciting opportunities.
@@ -168,7 +181,12 @@ export default function Home() {
                 <Link href="/careers">View Careers</Link>
               </Button>
             </div>
-            <div className="text-center p-6 border border-brand-light-gray rounded-lg hover:shadow-lg transition-shadow">
+            <div className="text-center p-6 border-2 border-brand-secondary rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
+              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
               <h3 className="text-subsection-title text-brand-primary mb-3">Work With Us</h3>
               <p className="text-body text-brand-gray mb-4">
                 Partner with Pallyflo for your agro-commodities needs. Start your business relationship today.
@@ -182,7 +200,7 @@ export default function Home() {
       </section>
 
       {/* Ready to Start Trading Section */}
-      <section className="py-16 bg-brand-primary text-white">
+      <section className="py-16 bg-brand-secondary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-section-title mb-4">Ready to Start Trading?</h2>
           <p className="text-body-large mb-8 max-w-2xl mx-auto">

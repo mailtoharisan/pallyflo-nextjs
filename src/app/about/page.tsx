@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Award, Globe, Users, Target, Heart } from "lucide-react"
+import Image from "next/image"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -45,160 +46,152 @@ export default function About() {
   }
 
   return (
-    <>
+    <div className="min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="min-h-screen">
-        {/* Hero Section */}
-        <section className="bg-gradient-subtle py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      {/* Hero Section */}
+      <section className="relative py-20 min-h-[60vh] flex items-center">
+        <div className="absolute inset-0">
+          <Image
+            src="/assets/hero-images/about-hero.jpg"
+            alt="About Pallyflo"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-brand-primary opacity-80"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="text-center">
+            <div className="mb-4">
+              <span className="text-brand-secondary text-lg font-semibold">
+                About Pallyflo
+              </span>
+            </div>
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight">
+              ABOUT US
+            </h1>
+            <p className="text-xl md:text-2xl text-white max-w-4xl mx-auto font-light">
+              Learn about our mission, vision, and values as a leading global agro-commodities trading company
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission, Vision, Values Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-section-title text-brand-primary mb-6">
+              Our Foundation
+            </h2>
+            <p className="text-body-large text-brand-gray max-w-4xl mx-auto">
+              Built on a foundation of trust, quality, and global excellence in agricultural trade.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <h1 className="text-hero text-brand-primary mb-6">
-                ABOUT PALLYFLO
-              </h1>
-              <p className="text-section-title text-brand-primary mb-6">
-                Leading Canadian Multinational Agro-Commodities Exporter
+              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Target className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-subsection-title text-brand-primary mb-3">Our Mission</h3>
+              <p className="text-body text-brand-gray">
+                To bridge the gap between agricultural producers and global markets, ensuring quality products reach consumers worldwide while fostering sustainable growth in the agricultural sector.
               </p>
-              <p className="text-body-large text-brand-gray max-w-4xl mx-auto">
-                Pallyflo stands at the forefront of global agricultural trade, connecting farmers with markets across continents. As a trusted Canadian multinational corporation, we specialize in the export and distribution of premium agro-commodities, fostering sustainable growth in the agricultural sector worldwide.
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Globe className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-subsection-title text-brand-primary mb-3">Our Vision</h3>
+              <p className="text-body text-brand-gray">
+                To be the world&apos;s most trusted and innovative agro-commodities trading partner, connecting continents through sustainable agricultural excellence.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Heart className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-subsection-title text-brand-primary mb-3">Our Values</h3>
+              <p className="text-body text-brand-gray">
+                Integrity, transparency, and commitment to excellence guide every transaction, ensuring long-term partnerships and sustainable agricultural development.
               </p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Statistics Section */}
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Award className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-subsection-title text-brand-primary mb-2">Trusted Partner</h3>
-                <p className="text-brand-gray">Industry Leader</p>
-                <p className="text-body-small text-brand-gray">Established reputation in global trade</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Globe className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-subsection-title text-brand-primary mb-2">9+ Countries</h3>
-                <p className="text-brand-gray">International market presence</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-subsection-title text-brand-primary mb-2">50+ Clients</h3>
-                <p className="text-brand-gray">Satisfied business partners worldwide</p>
-              </div>
-            </div>
+      {/* Our Values Section */}
+      <section className="py-16 bg-gradient-subtle">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-section-title text-brand-primary mb-6">
+              What Drives Us
+            </h2>
+            <p className="text-body-large text-brand-gray max-w-4xl mx-auto">
+              Our core values shape every decision and relationship in our global trading network.
+            </p>
           </div>
-        </section>
-
-        {/* Who We Are Section */}
-        <section className="py-16 bg-gradient-subtle">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-section-title text-brand-primary mb-6">
-                Who We Are
-              </h2>
-              <p className="text-body-large text-brand-gray max-w-4xl mx-auto mb-8">
-                Founded on the principles of excellence and integrity, Pallyflo has grown from a regional trader to a global powerhouse in agro-commodities. Our team of experienced professionals brings decades of expertise in international trade, quality assurance, and market analysis.
-              </p>
-              <p className="text-body text-brand-gray max-w-4xl mx-auto mb-8">
-                We understand the complexities of global markets and work tirelessly to bridge the gap between producers and consumers, ensuring fair pricing and reliable supply chains that benefit all stakeholders.
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Award className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-subsection-title text-brand-primary mb-3">Quality Excellence</h3>
+              <p className="text-body text-brand-gray">
+                Maintaining the highest standards in product quality and service delivery across all our operations.
               </p>
             </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <div>
-                <h3 className="text-subsection-title text-brand-primary mb-4">What We Do</h3>
-                <ul className="space-y-3 text-body text-brand-gray">
-                  <li>• Export premium pulses, grains, and oil seeds globally</li>
-                  <li>• Provide comprehensive market research and analysis</li>
-                  <li>• Facilitate cross-border trade relationships</li>
-                  <li>• Ensure quality assurance and compliance</li>
-                  <li>• Deliver end-to-end logistics solutions</li>
-                </ul>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-white" />
               </div>
-              <div>
-                <h3 className="text-subsection-title text-brand-primary mb-4">Our Mission</h3>
-                <p className="text-body text-brand-gray mb-4">
-                  To be the leading global platform for agro-commodities trade, connecting agricultural producers with international markets while maintaining the highest standards of quality, integrity, and sustainability. We strive to contribute to global food security and economic prosperity.
-                </p>
-                <h3 className="text-subsection-title text-brand-primary mb-4">Our Vision</h3>
-                <p className="text-body text-brand-gray">
-                  To revolutionize global agricultural trade through innovation, transparency, and sustainable practices. We envision a world where quality agricultural products reach every corner of the globe efficiently, fostering prosperity for farmers and communities worldwide.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Our Values Section */}
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-section-title text-brand-primary mb-4">
-                Our Values
-              </h2>
-              <p className="text-body-large text-brand-gray">
-                Our core values guide every decision we make and every relationship we build, ensuring we maintain the highest standards in all our operations.
+              <h3 className="text-subsection-title text-brand-primary mb-3">Trusted Partnerships</h3>
+              <p className="text-body text-brand-gray">
+                Building long-term relationships based on mutual trust, transparency, and shared success.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Globe className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-subsection-title text-brand-primary mb-3">Global Responsibility</h3>
-                <p className="text-body text-brand-gray">
-                  Contributing to sustainable agricultural practices worldwide
-                </p>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Globe className="w-8 h-8 text-white" />
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Target className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-subsection-title text-brand-primary mb-3">Integrity</h3>
-                <p className="text-body text-brand-gray">
-                  Honest and transparent business practices in all our dealings
-                </p>
+              <h3 className="text-subsection-title text-brand-primary mb-3">Global Reach</h3>
+              <p className="text-body text-brand-gray">
+                Connecting agricultural markets across continents with our extensive international network.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Target className="w-8 h-8 text-white" />
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Award className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-subsection-title text-brand-primary mb-3">Excellence</h3>
-                <p className="text-body text-brand-gray">
-                  Delivering superior quality products and services consistently
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-subsection-title text-brand-primary mb-3">Client Success</h3>
-                <p className="text-body text-brand-gray">
-                  Dedicated to our partners' growth and long-term success
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Heart className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-subsection-title text-brand-primary mb-3">Diversity & Inclusion</h3>
-                <p className="text-body text-brand-gray">
-                  Embracing diverse perspectives and inclusive business practices
-                </p>
-              </div>
+              <h3 className="text-subsection-title text-brand-primary mb-3">Innovation</h3>
+              <p className="text-body text-brand-gray">
+                Continuously improving our processes and adopting new technologies to serve our partners better.
+              </p>
             </div>
           </div>
-        </section>
-      </div>
-    </>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-brand-secondary text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-section-title mb-4">Ready to Partner With Us?</h2>
+          <p className="text-body-large mb-8 max-w-2xl mx-auto">
+            Join our network of global partners and discover new opportunities in agro-commodities trading.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button variant="secondary" size="lg">
+              Contact Our Team
+            </Button>
+            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-brand-primary">
+              Learn More
+            </Button>
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }

@@ -6,6 +6,7 @@
   --brand-primary: #05204D;
   --brand-secondary: #FF9A1F;
   --brand-light: #DADFE7;
+  --brand-light-blue: #87CEEB;
   --brand-dark: #1D2839;
   --brand-gray: #606E85;
   --brand-light-gray: #E5E7EB;
@@ -21,6 +22,7 @@
   --color-brand-primary: var(--brand-primary);
   --color-brand-secondary: var(--brand-secondary);
   --color-brand-light: var(--brand-light);
+  --color-brand-light-blue: var(--brand-light-blue);
   --color-brand-dark: var(--brand-dark);
   --color-brand-gray: var(--brand-gray);
   --color-brand-light-gray: var(--brand-light-gray);
@@ -60,10 +62,11 @@ body {
 .border-brand-gray { border-color: var(--brand-gray); }
 .border-brand-light-gray { border-color: var(--brand-light-gray); }
 .border-brand-medium-gray { border-color: var(--brand-medium-gray); }
+.border-brand-light-blue { border-color: var(--brand-light-blue); }
 
 /* Gradient backgrounds */
 .bg-gradient-subtle {
-  background: linear-gradient(135deg, var(--brand-light) 0%, var(--brand-light-gray) 100%);
+  background: #fafafa;
 }
 
 /* Typography hierarchy */
@@ -101,4 +104,98 @@ body {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
+}
+
+/* Line clamp utilities */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Zig-zag border effect */
+.zigzag-border {
+  position: relative;
+}
+
+.zigzag-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    var(--brand-primary) 0%, 
+    var(--brand-primary) 25%, 
+    var(--brand-secondary) 25%, 
+    var(--brand-secondary) 50%, 
+    var(--brand-primary) 50%, 
+    var(--brand-primary) 75%, 
+    var(--brand-secondary) 75%, 
+    var(--brand-secondary) 100%);
+  z-index: 1;
+}
+
+.zigzag-border::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    var(--brand-secondary) 0%, 
+    var(--brand-secondary) 25%, 
+    var(--brand-primary) 25%, 
+    var(--brand-primary) 50%, 
+    var(--brand-secondary) 50%, 
+    var(--brand-secondary) 75%, 
+    var(--brand-primary) 75%, 
+    var(--brand-primary) 100%);
+  z-index: 1;
+}
+
+/* Orange zig-zag border effect */
+.zigzag-border-orange {
+  position: relative;
+}
+
+.zigzag-border-orange::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    var(--brand-secondary) 0%, 
+    var(--brand-secondary) 25%, 
+    var(--brand-primary) 25%, 
+    var(--brand-primary) 50%, 
+    var(--brand-secondary) 50%, 
+    var(--brand-secondary) 75%, 
+    var(--brand-primary) 75%, 
+    var(--brand-primary) 100%);
+  z-index: 1;
+}
+
+.zigzag-border-orange::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    var(--brand-primary) 0%, 
+    var(--brand-primary) 25%, 
+    var(--brand-secondary) 25%, 
+    var(--brand-secondary) 50%, 
+    var(--brand-primary) 50%, 
+    var(--brand-primary) 75%, 
+    var(--brand-secondary) 75%, 
+    var(--brand-secondary) 100%);
+  z-index: 1;
 }

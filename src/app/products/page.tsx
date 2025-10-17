@@ -199,22 +199,28 @@ export default function Products() {
       />
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-subtle">
+        <section className="relative py-20 min-h-[60vh] flex items-center">
           <div className="absolute inset-0">
             <Image
               src="/assets/AgroProducts.jpg"
               alt="Agro Products"
               fill
-              className="object-cover opacity-20"
+              className="object-cover"
             />
+            <div className="absolute inset-0 bg-brand-primary opacity-80"></div>
           </div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div className="text-center">
-              <h1 className="text-hero text-brand-primary mb-6">
+              <div className="mb-4">
+                <span className="text-brand-secondary text-lg font-semibold">
+                  Premium Agro-Commodities
+                </span>
+              </div>
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight">
                 PRODUCTS
               </h1>
-              <p className="text-body-large text-brand-gray max-w-3xl mx-auto">
-                Comprehensive agro-commodities product portfolio including pulses, legumes, oil seeds, and cereals
+              <p className="text-xl md:text-2xl text-white max-w-4xl mx-auto font-light">
+                High-quality agricultural products for global markets
               </p>
             </div>
           </div>
@@ -235,18 +241,42 @@ export default function Products() {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {productCategories.map((category, index) => (
-                <div key={index} className="text-center p-6 border border-brand-light-gray rounded-lg">
-                  <h3 className="text-subsection-title text-brand-primary mb-4">{category.title}</h3>
-                  <ul className="space-y-2">
-                    {category.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="text-body text-brand-gray">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+              {productCategories.map((category, index) => {
+                const borderColors = ['border-brand-secondary', 'border-brand-secondary', 'border-brand-secondary'];
+                const iconColors = ['bg-brand-secondary', 'bg-brand-secondary', 'bg-brand-secondary'];
+                const icons = [
+                  // Pulses & Legumes icon
+                  <svg key="pulses-icon" className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>,
+                  // Oil Seeds & Grains icon
+                  <svg key="oil-seeds-icon" className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>,
+                  // Cereals & Specialty Crops icon
+                  <svg key="cereals-icon" className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                ];
+                
+                return (
+                  <div key={index} className={`text-center p-6 border-2 ${borderColors[index]} rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105`}>
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center">
+                      <div className={`w-16 h-16 ${iconColors[index]} rounded-full flex items-center justify-center`}>
+                        {icons[index]}
+                      </div>
+                    </div>
+                    <h3 className="text-subsection-title text-brand-primary mb-4">{category.title}</h3>
+                    <ul className="space-y-2">
+                      {category.items.map((item, itemIndex) => (
+                        <li key={itemIndex} className="text-body text-brand-gray">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -259,10 +289,11 @@ export default function Products() {
                 LENTILS
               </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 gap-8">
               {lentilVarieties.map((lentil, index) => (
-                <div key={index} className="bg-white border border-brand-light-gray rounded-lg p-6 hover:shadow-lg transition-shadow">
-                  <div className="relative h-48 mb-4">
+                <div key={index} className={`bg-white border-2 border-brand-secondary rounded-lg p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 relative overflow-hidden group flex flex-col md:flex-row gap-6 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+                  
+                  <div className="relative w-full md:w-80 h-64 flex-shrink-0">
                     <Image
                       src={lentil.image}
                       alt={lentil.name}
@@ -270,11 +301,13 @@ export default function Products() {
                       className="object-cover rounded-lg"
                     />
                   </div>
-                  <h3 className="text-subsection-title text-brand-primary mb-3">{lentil.name}</h3>
-                  <p className="text-body text-brand-gray mb-4">{lentil.description}</p>
-                  <p className="text-body-small text-brand-secondary font-medium">
-                    Benefits: {lentil.benefits}
-                  </p>
+                  <div className="flex-1">
+                    <h3 className="text-subsection-title text-brand-primary mb-3">{lentil.name}</h3>
+                    <p className="text-body text-brand-gray mb-4">{lentil.description}</p>
+                    <p className="text-body-small text-brand-secondary font-medium">
+                      Benefits: {lentil.benefits}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -289,10 +322,11 @@ export default function Products() {
                 BEANS
               </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 gap-8">
               {beanVarieties.map((bean, index) => (
-                <div key={index} className="bg-white border border-brand-light-gray rounded-lg p-6 hover:shadow-lg transition-shadow">
-                  <div className="relative h-48 mb-4">
+                <div key={index} className={`bg-white border-2 border-brand-secondary rounded-lg p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 relative overflow-hidden group flex flex-col md:flex-row gap-6 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+                  
+                  <div className="relative w-full md:w-80 h-64 flex-shrink-0">
                     <Image
                       src={bean.image}
                       alt={bean.name}
@@ -300,12 +334,14 @@ export default function Products() {
                       className="object-cover rounded-lg"
                     />
                   </div>
-                  <h3 className="text-subsection-title text-brand-primary mb-3">{bean.name}</h3>
-                  <p className="text-body text-brand-gray mb-4">{bean.description}</p>
-                  <p className="text-body-small text-brand-secondary font-medium">
-                    {bean.usage && `Usage: ${bean.usage}`}
-                    {bean.benefits && `Benefits: ${bean.benefits}`}
-                  </p>
+                  <div className="flex-1">
+                    <h3 className="text-subsection-title text-brand-primary mb-3">{bean.name}</h3>
+                    <p className="text-body text-brand-gray mb-4">{bean.description}</p>
+                    <p className="text-body-small text-brand-secondary font-medium">
+                      {bean.usage && `Usage: ${bean.usage}`}
+                      {bean.benefits && `Benefits: ${bean.benefits}`}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -320,10 +356,11 @@ export default function Products() {
                 PEAS
               </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 gap-8">
               {peaVarieties.map((pea, index) => (
-                <div key={index} className="bg-white border border-brand-light-gray rounded-lg p-6 hover:shadow-lg transition-shadow">
-                  <div className="relative h-48 mb-4">
+                <div key={index} className={`bg-white border-2 border-brand-secondary rounded-lg p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 relative overflow-hidden group flex flex-col md:flex-row gap-6 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+                  
+                  <div className="relative w-full md:w-80 h-64 flex-shrink-0">
                     <Image
                       src={pea.image}
                       alt={pea.name}
@@ -331,12 +368,14 @@ export default function Products() {
                       className="object-cover rounded-lg"
                     />
                   </div>
-                  <h3 className="text-subsection-title text-brand-primary mb-3">{pea.name}</h3>
-                  <p className="text-body text-brand-gray mb-4">{pea.description}</p>
-                  <p className="text-body-small text-brand-secondary font-medium">
-                    {pea.usage && `Usage: ${pea.usage}`}
-                    {pea.benefits && `Benefits: ${pea.benefits}`}
-                  </p>
+                  <div className="flex-1">
+                    <h3 className="text-subsection-title text-brand-primary mb-3">{pea.name}</h3>
+                    <p className="text-body text-brand-gray mb-4">{pea.description}</p>
+                    <p className="text-body-small text-brand-secondary font-medium">
+                      {pea.usage && `Usage: ${pea.usage}`}
+                      {pea.benefits && `Benefits: ${pea.benefits}`}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -351,10 +390,11 @@ export default function Products() {
                 OIL SEEDS
               </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 gap-8">
               {seedVarieties.map((seed, index) => (
-                <div key={index} className="bg-white border border-brand-light-gray rounded-lg p-6 hover:shadow-lg transition-shadow">
-                  <div className="relative h-48 mb-4">
+                <div key={index} className={`bg-white border-2 border-brand-secondary rounded-lg p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 relative overflow-hidden group flex flex-col md:flex-row gap-6 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+                  
+                  <div className="relative w-full md:w-80 h-64 flex-shrink-0">
                     <Image
                       src={seed.image}
                       alt={seed.name}
@@ -362,24 +402,26 @@ export default function Products() {
                       className="object-cover rounded-lg"
                     />
                   </div>
-                  <h3 className="text-subsection-title text-brand-primary mb-3">{seed.name}</h3>
-                  <p className="text-body text-brand-gray mb-4">{seed.description}</p>
-                  <div className="space-y-2">
-                    {seed.benefits && (
-                      <p className="text-body-small text-brand-secondary font-medium">
-                        Benefits: {seed.benefits}
-                      </p>
-                    )}
-                    {seed.varieties && (
-                      <p className="text-body-small text-brand-gray">
-                        Varieties: {seed.varieties}
-                      </p>
-                    )}
-                    {seed.characteristics && (
-                      <p className="text-body-small text-brand-gray">
-                        Characteristics: {seed.characteristics}
-                      </p>
-                    )}
+                  <div className="flex-1">
+                    <h3 className="text-subsection-title text-brand-primary mb-3">{seed.name}</h3>
+                    <p className="text-body text-brand-gray mb-4">{seed.description}</p>
+                    <div className="space-y-2">
+                      {seed.benefits && (
+                        <p className="text-body-small text-brand-secondary font-medium">
+                          Benefits: {seed.benefits}
+                        </p>
+                      )}
+                      {seed.varieties && (
+                        <p className="text-body-small text-brand-gray">
+                          Varieties: {seed.varieties}
+                        </p>
+                      )}
+                      {seed.characteristics && (
+                        <p className="text-body-small text-brand-gray">
+                          Characteristics: {seed.characteristics}
+                        </p>
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -400,24 +442,44 @@ export default function Products() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">
+                <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
                 <h3 className="text-subsection-title text-brand-primary mb-3">Premium Quality</h3>
                 <p className="text-body text-brand-gray">
                   High-quality products from Canada and worldwide farms
                 </p>
               </div>
               <div className="text-center">
+                <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                </div>
                 <h3 className="text-subsection-title text-brand-primary mb-3">Non-GMO Options</h3>
                 <p className="text-body text-brand-gray">
                   Identity-preserved, food-grade products available
                 </p>
               </div>
               <div className="text-center">
+                <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
                 <h3 className="text-subsection-title text-brand-primary mb-3">Sustainability</h3>
                 <p className="text-body text-brand-gray">
                   Sustainably grown products meeting international standards
                 </p>
               </div>
               <div className="text-center">
+                <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                  </svg>
+                </div>
                 <h3 className="text-subsection-title text-brand-primary mb-3">Export Ready</h3>
                 <p className="text-body text-brand-gray">
                   Meeting international export requirements and certifications

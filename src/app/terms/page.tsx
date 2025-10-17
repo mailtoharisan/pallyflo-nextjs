@@ -18,7 +18,7 @@ export default function Terms() {
         <h1 className="text-hero text-brand-primary mb-8">Terms of Service</h1>
         <div className="prose prose-lg max-w-none">
           <p className="text-body text-brand-gray">
-            This page contains our terms of service and conditions for using Pallyflo's services.
+            This page contains our terms of service and conditions for using Pallyflo&apos;s services.
           </p>
         </div>
       </div>

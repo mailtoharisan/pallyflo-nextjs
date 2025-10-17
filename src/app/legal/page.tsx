@@ -18,7 +18,7 @@ export default function Legal() {
         <h1 className="text-hero text-brand-primary mb-8">Legal Information</h1>
         <div className="prose prose-lg max-w-none">
           <p className="text-body text-brand-gray">
-            This page contains legal information and terms for Pallyflo's global agro-commodities trading services.
+            This page contains legal information and terms for Pallyflo&apos;s global agro-commodities trading services.
           </p>
         </div>
       </div>
