@@ -671,7 +671,7 @@ export default function WorkWithUs() {
             <Button variant="default" size="lg" asChild className="transition-all duration-300">
               <Link href="/work-with-us#business-inquiries">Submit Inquiry</Link>
             </Button>
-            <Button variant="outline" size="lg" asChild className="transition-all duration-300 border-white text-white hover:bg-white hover:text-brand-secondary">
+            <Button variant="outline" size="lg" asChild className="transition-all duration-300 border-white text-white hover:bg-white hover:text-brand-primary">
               <Link href="/reach-us#quick-contact">Contact Us</Link>
             </Button>
           </div>

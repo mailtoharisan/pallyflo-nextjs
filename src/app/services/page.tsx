@@ -207,7 +207,7 @@ export default function Services() {
             <Button variant="default" size="lg" asChild className="transition-all duration-300">
               <Link href="/work-with-us#business-inquiries">Start Your Project</Link>
             </Button>
-            <Button variant="outline" size="lg" asChild className="transition-all duration-300 border-white text-white hover:bg-white hover:text-brand-secondary">
+            <Button variant="outline" size="lg" asChild className="transition-all duration-300 border-white text-white hover:bg-white hover:text-brand-primary">
               <Link href="/services#our-process">Get Consultation</Link>
             </Button>
           </div>

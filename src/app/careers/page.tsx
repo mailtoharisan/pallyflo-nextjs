@@ -362,9 +362,9 @@ export default function Careers() {
             <Button variant="default" size="lg" asChild className="transition-all duration-300">
               <Link href="/careers#application-form">Submit Application</Link>
             </Button>
-            <Button variant="outline" size="lg" asChild className="transition-all duration-300 border-white text-white hover:bg-white hover:text-brand-secondary">
+            <Button variant="outline" size="lg" asChild className="transition-all duration-300 border-white text-white hover:bg-white hover:text-brand-primary">
               <Link href="/reach-us#quick-contact">Contact HR</Link>
-          </Button>
+            </Button>
           </div>
         </div>
       </section>
