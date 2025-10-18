@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -242,8 +243,6 @@ export default function Products() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {productCategories.map((category, index) => {
-                const borderColors = ['border-brand-secondary', 'border-brand-secondary', 'border-brand-secondary'];
-                const iconColors = ['bg-brand-secondary', 'bg-brand-secondary', 'bg-brand-secondary'];
                 const icons = [
                   // Pulses & Legumes icon
                   <svg key="pulses-icon" className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -260,11 +259,13 @@ export default function Products() {
                 ];
                 
                 return (
-                  <div key={index} className={`text-center p-6 border-2 ${borderColors[index]} rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105`}>
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center">
-                      <div className={`w-16 h-16 ${iconColors[index]} rounded-full flex items-center justify-center`}>
-                        {icons[index]}
-                      </div>
+                  <div key={index} className={`bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer ${
+                    index % 2 === 0 ? 'border-l-4 border-brand-primary' : 'border-l-4 border-brand-secondary'
+                  }`}>
+                    <div className={`w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center ${
+                      index % 2 === 0 ? 'bg-brand-primary' : 'bg-brand-secondary'
+                    }`}>
+                      {icons[index]}
                     </div>
                     <h3 className="text-subsection-title text-brand-primary mb-4">{category.title}</h3>
                     <ul className="space-y-2">
@@ -289,11 +290,10 @@ export default function Products() {
                 LENTILS
               </h2>
             </div>
-            <div className="grid grid-cols-1 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {lentilVarieties.map((lentil, index) => (
-                <div key={index} className={`bg-white border-2 border-brand-secondary rounded-lg p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 relative overflow-hidden group flex flex-col md:flex-row gap-6 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-                  
-                  <div className="relative w-full md:w-80 h-64 flex-shrink-0">
+                <div key={index} className="bg-white p-6 rounded-lg border-l-4 border-brand-secondary shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                  <div className="relative w-full h-48 mb-4">
                     <Image
                       src={lentil.image}
                       alt={lentil.name}
@@ -301,13 +301,11 @@ export default function Products() {
                       className="object-cover rounded-lg"
                     />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-subsection-title text-brand-primary mb-3">{lentil.name}</h3>
-                    <p className="text-body text-brand-gray mb-4">{lentil.description}</p>
-                    <p className="text-body-small text-brand-secondary font-medium">
-                      Benefits: {lentil.benefits}
-                    </p>
-                  </div>
+                  <h3 className="text-subsection-title text-brand-primary mb-3">{lentil.name}</h3>
+                  <p className="text-body text-brand-gray mb-4">{lentil.description}</p>
+                  <p className="text-body-small text-brand-secondary font-medium">
+                    Benefits: {lentil.benefits}
+                  </p>
                 </div>
               ))}
             </div>
@@ -322,11 +320,10 @@ export default function Products() {
                 BEANS
               </h2>
             </div>
-            <div className="grid grid-cols-1 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {beanVarieties.map((bean, index) => (
-                <div key={index} className={`bg-white border-2 border-brand-secondary rounded-lg p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 relative overflow-hidden group flex flex-col md:flex-row gap-6 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-                  
-                  <div className="relative w-full md:w-80 h-64 flex-shrink-0">
+                <div key={index} className="bg-white p-6 rounded-lg border-l-4 border-brand-primary shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                  <div className="relative w-full h-48 mb-4">
                     <Image
                       src={bean.image}
                       alt={bean.name}
@@ -334,14 +331,12 @@ export default function Products() {
                       className="object-cover rounded-lg"
                     />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-subsection-title text-brand-primary mb-3">{bean.name}</h3>
-                    <p className="text-body text-brand-gray mb-4">{bean.description}</p>
-                    <p className="text-body-small text-brand-secondary font-medium">
-                      {bean.usage && `Usage: ${bean.usage}`}
-                      {bean.benefits && `Benefits: ${bean.benefits}`}
-                    </p>
-                  </div>
+                  <h3 className="text-subsection-title text-brand-primary mb-3">{bean.name}</h3>
+                  <p className="text-body text-brand-gray mb-4">{bean.description}</p>
+                  <p className="text-body-small text-brand-secondary font-medium">
+                    {bean.usage && `Usage: ${bean.usage}`}
+                    {bean.benefits && `Benefits: ${bean.benefits}`}
+                  </p>
                 </div>
               ))}
             </div>
@@ -356,11 +351,10 @@ export default function Products() {
                 PEAS
               </h2>
             </div>
-            <div className="grid grid-cols-1 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {peaVarieties.map((pea, index) => (
-                <div key={index} className={`bg-white border-2 border-brand-secondary rounded-lg p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 relative overflow-hidden group flex flex-col md:flex-row gap-6 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-                  
-                  <div className="relative w-full md:w-80 h-64 flex-shrink-0">
+                <div key={index} className="bg-white p-6 rounded-lg border-l-4 border-brand-secondary shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                  <div className="relative w-full h-48 mb-4">
                     <Image
                       src={pea.image}
                       alt={pea.name}
@@ -368,14 +362,12 @@ export default function Products() {
                       className="object-cover rounded-lg"
                     />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-subsection-title text-brand-primary mb-3">{pea.name}</h3>
-                    <p className="text-body text-brand-gray mb-4">{pea.description}</p>
-                    <p className="text-body-small text-brand-secondary font-medium">
-                      {pea.usage && `Usage: ${pea.usage}`}
-                      {pea.benefits && `Benefits: ${pea.benefits}`}
-                    </p>
-                  </div>
+                  <h3 className="text-subsection-title text-brand-primary mb-3">{pea.name}</h3>
+                  <p className="text-body text-brand-gray mb-4">{pea.description}</p>
+                  <p className="text-body-small text-brand-secondary font-medium">
+                    {pea.usage && `Usage: ${pea.usage}`}
+                    {pea.benefits && `Benefits: ${pea.benefits}`}
+                  </p>
                 </div>
               ))}
             </div>
@@ -390,11 +382,10 @@ export default function Products() {
                 OIL SEEDS
               </h2>
             </div>
-            <div className="grid grid-cols-1 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {seedVarieties.map((seed, index) => (
-                <div key={index} className={`bg-white border-2 border-brand-secondary rounded-lg p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 relative overflow-hidden group flex flex-col md:flex-row gap-6 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-                  
-                  <div className="relative w-full md:w-80 h-64 flex-shrink-0">
+                <div key={index} className="bg-white p-6 rounded-lg border-l-4 border-brand-primary shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                  <div className="relative w-full h-48 mb-4">
                     <Image
                       src={seed.image}
                       alt={seed.name}
@@ -402,26 +393,24 @@ export default function Products() {
                       className="object-cover rounded-lg"
                     />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-subsection-title text-brand-primary mb-3">{seed.name}</h3>
-                    <p className="text-body text-brand-gray mb-4">{seed.description}</p>
-                    <div className="space-y-2">
-                      {seed.benefits && (
-                        <p className="text-body-small text-brand-secondary font-medium">
-                          Benefits: {seed.benefits}
-                        </p>
-                      )}
-                      {seed.varieties && (
-                        <p className="text-body-small text-brand-gray">
-                          Varieties: {seed.varieties}
-                        </p>
-                      )}
-                      {seed.characteristics && (
-                        <p className="text-body-small text-brand-gray">
-                          Characteristics: {seed.characteristics}
-                        </p>
-                      )}
-                    </div>
+                  <h3 className="text-subsection-title text-brand-primary mb-3">{seed.name}</h3>
+                  <p className="text-body text-brand-gray mb-4">{seed.description}</p>
+                  <div className="space-y-2">
+                    {seed.benefits && (
+                      <p className="text-body-small text-brand-secondary font-medium">
+                        Benefits: {seed.benefits}
+                      </p>
+                    )}
+                    {seed.varieties && (
+                      <p className="text-body-small text-brand-gray">
+                        Varieties: {seed.varieties}
+                      </p>
+                    )}
+                    {seed.characteristics && (
+                      <p className="text-body-small text-brand-gray">
+                        Characteristics: {seed.characteristics}
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}
@@ -430,7 +419,7 @@ export default function Products() {
         </section>
 
         {/* Product Quality Section */}
-        <section className="py-16 bg-gradient-subtle">
+        <section id="product-quality" className="py-16 bg-gradient-subtle">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-section-title text-brand-primary mb-6">
@@ -440,10 +429,10 @@ export default function Products() {
                 We maintain the highest standards of quality and sustainability across all our products.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-white p-6 rounded-lg border-l-4 border-brand-primary shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
@@ -452,9 +441,9 @@ export default function Products() {
                   High-quality products from Canada and worldwide farms
                 </p>
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-white p-6 rounded-lg border-l-4 border-brand-secondary shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                <div className="w-12 h-12 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                   </svg>
                 </div>
@@ -463,9 +452,9 @@ export default function Products() {
                   Identity-preserved, food-grade products available
                 </p>
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-white p-6 rounded-lg border-l-4 border-brand-primary shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
@@ -474,9 +463,9 @@ export default function Products() {
                   Sustainably grown products meeting international standards
                 </p>
               </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-white p-6 rounded-lg border-l-4 border-brand-secondary shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                <div className="w-12 h-12 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                   </svg>
                 </div>
@@ -486,26 +475,27 @@ export default function Products() {
                 </p>
               </div>
             </div>
-          </div>
-        </section>
+        </div>
+      </section>
 
-        {/* CTA Section */}
-        <section className="py-16 bg-brand-primary text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-section-title mb-4">Interested in Our Products?</h2>
-            <p className="text-body-large mb-8 max-w-2xl mx-auto">
-              Contact us to learn more about our comprehensive agro-commodities portfolio and quality standards.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="secondary" size="lg">
-                Contact Sales
-              </Button>
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-brand-primary">
-                Download Catalog
-              </Button>
-            </div>
+      {/* Ready to Source Products? Section */}
+      <section className="py-16 bg-brand-secondary text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-section-title text-white mb-4">Ready to Source Products?</h2>
+          <p className="text-body-large text-white mb-8 max-w-2xl mx-auto">
+            Get access to premium agro-commodities from our extensive network of trusted suppliers worldwide.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button variant="default" size="lg" asChild className="transition-all duration-300">
+              <Link href="/work-with-us#business-inquiries">Request Quote</Link>
+            </Button>
+            <Button variant="outline" size="lg" asChild className="transition-all duration-300 border-white text-white hover:bg-white hover:text-brand-secondary">
+              <Link href="/products#product-quality">Contact Sales</Link>
+            </Button>
           </div>
-        </section>
+        </div>
+      </section>
+
       </div>
     </>
   )

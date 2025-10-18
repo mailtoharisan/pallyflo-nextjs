@@ -1,21 +1,33 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { Globe, Users, Award } from "lucide-react"
+import { Globe, Users, Award, TrendingUp } from "lucide-react"
+import Image from "next/image"
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-subtle py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 min-h-[60vh] flex items-center">
+        <div className="absolute inset-0">
+          <Image
+            src="/assets/hero-images/home-hero.jpg"
+            alt="Pallyflo Global Agro-Commodities Trading"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-brand-primary opacity-80"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center">
-            <p className="text-brand-secondary font-semibold text-lg mb-4">
-              Your Trusted Partner in Agricultural Trade
-            </p>
-            <h1 className="text-hero text-brand-primary mb-6">
-              Global Agro-Commodities Trading Excellence
+            <div className="mb-4">
+              <span className="text-brand-secondary text-lg font-semibold">
+                Your Trusted Partner in Agricultural Trade
+              </span>
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+              GLOBAL AGRO-COMMODITIES TRADING EXCELLENCE
             </h1>
-            <p className="text-body-large text-brand-gray max-w-3xl mx-auto mb-8">
+            <p className="text-xl md:text-2xl text-white max-w-4xl mx-auto font-light mb-8">
               Leading Canadian multinational exporter connecting quality agricultural products with global markets across 9+ countries.
             </p>
             <Button variant="secondary" size="lg" className="text-lg px-8 py-4">
@@ -34,8 +46,7 @@ export default function Home() {
                 <Award className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-subsection-title text-brand-primary mb-2">Trusted Partner</h3>
-              <p className="text-brand-gray">Industry Leader</p>
-              <p className="text-body-small text-brand-gray">Established reputation in global trade</p>
+              <p className="text-brand-gray">Industry Leader with established reputation in global trade</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
@@ -66,10 +77,10 @@ export default function Home() {
               Pallyflo stands at the forefront of global agro-commodities trading, bridging the gap between premium agricultural producers and international markets. With our Canadian headquarters and international presence, we deliver excellence through every transaction while maintaining the highest standards of quality and integrity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="outline" size="lg">
-                Learn About Us
+              <Button variant="secondary" size="lg">
+                Learn About Us →
               </Button>
-              <Button variant="default" size="lg">
+              <Button variant="outline" size="lg" className="border-brand-secondary text-brand-secondary hover:bg-brand-secondary hover:text-white transition-all duration-300">
                 Contact Our Team
               </Button>
             </div>
@@ -78,7 +89,7 @@ export default function Home() {
       </section>
 
       {/* Why Choose Pallyflo Section */}
-      <section className="py-16 bg-gradient-subtle">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-section-title text-brand-primary mb-4">
@@ -88,37 +99,37 @@ export default function Home() {
               Discover what sets us apart as a leader in global agro-commodities trading.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <Globe className="w-8 h-8 text-white" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white p-6 rounded-lg border-l-4 border-brand-primary shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+              <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Globe className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-subsection-title text-brand-primary mb-3">Global Trading Solutions</h3>
               <p className="text-body text-brand-gray">
                 Comprehensive agro-commodities trading across international markets with established networks in 9+ countries.
               </p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award className="w-8 h-8 text-white" />
+            <div className="bg-white p-6 rounded-lg border-l-4 border-brand-secondary shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+              <div className="w-12 h-12 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Award className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-subsection-title text-brand-primary mb-3">Quality Assurance</h3>
               <p className="text-body text-brand-gray">
                 Rigorous quality control processes and international certifications ensuring premium product standards.
               </p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-white" />
+            <div className="bg-white p-6 rounded-lg border-l-4 border-brand-primary shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+              <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-subsection-title text-brand-primary mb-3">Trusted Partnerships</h3>
               <p className="text-body text-brand-gray">
                 Building long-term relationships with 50+ satisfied clients worldwide through transparency and reliability.
               </p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <Globe className="w-8 h-8 text-white" />
+            <div className="bg-white p-6 rounded-lg border-l-4 border-brand-secondary shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+              <div className="w-12 h-12 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <TrendingUp className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-subsection-title text-brand-primary mb-3">Market Expertise</h3>
               <p className="text-body text-brand-gray">
@@ -130,7 +141,7 @@ export default function Home() {
       </section>
 
       {/* Explore Our Solutions Section */}
-      <section className="py-16 bg-white">
+      <section id="explore-solutions" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-section-title text-brand-primary mb-4">
@@ -140,59 +151,41 @@ export default function Home() {
               From products to partnerships, discover how Pallyflo can support your business objectives.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center p-6 border-2 border-brand-secondary rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                </svg>
-              </div>
-              <h3 className="text-subsection-title text-brand-primary mb-3">Our Products</h3>
-              <p className="text-body text-brand-gray mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
+              <h3 className="text-subsection-title text-brand-primary mb-4">Our Products</h3>
+              <p className="text-body text-brand-gray mb-6">
                 Explore our comprehensive range of premium agro-commodities including pulses, grains, and oil seeds.
               </p>
-              <Button variant="outline" asChild>
-                <Link href="/products">View Products</Link>
+              <Button variant="secondary" asChild className="transition-all duration-300">
+                <Link href="/products">View Products →</Link>
               </Button>
             </div>
-            <div className="text-center p-6 border-2 border-brand-secondary rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-subsection-title text-brand-primary mb-3">Our Services</h3>
-              <p className="text-body text-brand-gray mb-4">
+            <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
+              <h3 className="text-subsection-title text-brand-primary mb-4">Our Services</h3>
+              <p className="text-body text-brand-gray mb-6">
                 Discover our end-to-end trading solutions from market research to global logistics and delivery.
               </p>
-              <Button variant="outline" asChild>
-                <Link href="/services">Learn More</Link>
+              <Button variant="secondary" asChild className="transition-all duration-300">
+                <Link href="/services">Learn More →</Link>
               </Button>
             </div>
-            <div className="text-center p-6 border-2 border-brand-secondary rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-subsection-title text-brand-primary mb-3">Join Our Team</h3>
-              <p className="text-body text-brand-gray mb-4">
+            <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
+              <h3 className="text-subsection-title text-brand-primary mb-4">Join Our Team</h3>
+              <p className="text-body text-brand-gray mb-6">
                 Build your career with a global leader in agro-commodities trading. Explore exciting opportunities.
               </p>
-              <Button variant="outline" asChild>
-                <Link href="/careers">View Careers</Link>
+              <Button variant="secondary" asChild className="transition-all duration-300">
+                <Link href="/careers">View Careers →</Link>
               </Button>
             </div>
-            <div className="text-center p-6 border-2 border-brand-secondary rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <h3 className="text-subsection-title text-brand-primary mb-3">Work With Us</h3>
-              <p className="text-body text-brand-gray mb-4">
+            <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
+              <h3 className="text-subsection-title text-brand-primary mb-4">Work With Us</h3>
+              <p className="text-body text-brand-gray mb-6">
                 Partner with Pallyflo for your agro-commodities needs. Start your business relationship today.
               </p>
-              <Button variant="outline" asChild>
-                <Link href="/work-with-us">Get Started</Link>
+              <Button variant="secondary" asChild className="transition-all duration-300">
+                <Link href="/work-with-us">Get Started →</Link>
               </Button>
             </div>
           </div>
@@ -202,20 +195,21 @@ export default function Home() {
       {/* Ready to Start Trading Section */}
       <section className="py-16 bg-brand-secondary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-section-title mb-4">Ready to Start Trading?</h2>
-          <p className="text-body-large mb-8 max-w-2xl mx-auto">
-            Join our network of global partners and discover new opportunities in agro-commodities trading.
+          <h2 className="text-section-title text-white mb-4">Ready to Start Trading?</h2>
+          <p className="text-body-large text-white mb-8 max-w-2xl mx-auto">
+            Join thousands of satisfied customers who trust Pallyflo for their agro-commodities trading needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="secondary" size="lg">
-              Submit Business Inquiry
+            <Button variant="default" size="lg" asChild className="transition-all duration-300">
+              <Link href="/work-with-us#business-inquiries">Start Partnership</Link>
             </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-brand-primary">
-              View Our Products
+            <Button variant="outline" size="lg" asChild className="transition-all duration-300 border-white text-white hover:bg-white hover:text-brand-secondary">
+              <Link href="/reach-us#quick-contact">Contact Us</Link>
             </Button>
           </div>
         </div>
       </section>
+
     </div>
   )
 }

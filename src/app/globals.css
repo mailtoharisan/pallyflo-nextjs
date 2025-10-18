@@ -157,6 +157,100 @@ body {
   z-index: 1;
 }
 
+/* ULTIMATE BUTTON TEXT FIX - Force visibility on all states */
+button,
+button *,
+button:hover,
+button:hover *,
+button:focus,
+button:focus *,
+button:active,
+button:active *,
+button:visited,
+button:visited * {
+  color: inherit !important;
+  text-decoration: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline !important;
+}
+
+/* Specific button variant fixes */
+button[class*="secondary"]:hover,
+button[class*="secondary"]:hover * {
+  color: white !important;
+}
+
+button[class*="outline"]:hover,
+button[class*="outline"]:hover * {
+  color: white !important;
+}
+
+button[class*="primary"]:hover,
+button[class*="primary"]:hover * {
+  color: white !important;
+}
+
+/* Force all button text to be visible with maximum specificity */
+button:hover,
+button:hover *,
+button:focus,
+button:focus *,
+button:active,
+button:active * {
+  color: inherit !important;
+  text-decoration: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline !important;
+}
+
+/* Override any conflicting styles */
+button[class*="hover:text-"]:hover,
+button[class*="hover:text-"]:hover * {
+  color: inherit !important;
+}
+
+/* Fix for buttons with custom classes */
+button[class*="border-white"]:hover,
+button[class*="border-white"]:hover * {
+  color: white !important;
+}
+
+button[class*="text-white"]:hover,
+button[class*="text-white"]:hover * {
+  color: white !important;
+}
+
+/* JavaScript-based fix for button text visibility */
+button {
+  position: relative;
+  z-index: 1;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Force button text to always be visible */
+button,
+button * {
+  position: relative;
+  z-index: 2;
+  color: inherit !important;
+  text-decoration: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline !important;
+}
+
 /* Orange zig-zag border effect */
 .zigzag-border-orange {
   position: relative;

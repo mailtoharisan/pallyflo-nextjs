@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Globe, Truck, BarChart3, Users, Package, Shield } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -117,11 +118,15 @@ export default function Services() {
               From market research to global logistics, we provide end-to-end solutions for agro-commodities trading.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
-              <div key={index} className="bg-gradient-subtle p-8 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mb-6">
-                  <service.icon className="w-8 h-8 text-white" />
+              <div key={index} className={`bg-white p-8 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer ${
+                index % 2 === 0 ? 'border-l-4 border-brand-primary' : 'border-l-4 border-brand-secondary'
+              }`}>
+                <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-6 ${
+                  index % 2 === 0 ? 'bg-brand-primary' : 'bg-brand-secondary'
+                }`}>
+                  <service.icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-subsection-title text-brand-primary mb-4">{service.title}</h3>
                 <p className="text-body text-brand-gray mb-6">{service.description}</p>
@@ -140,7 +145,7 @@ export default function Services() {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 bg-gradient-subtle">
+      <section id="our-process" className="py-16 bg-gradient-subtle">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-section-title text-brand-primary mb-6">
@@ -150,37 +155,37 @@ export default function Services() {
               A streamlined approach to agro-commodities trading that ensures quality, efficiency, and success.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-white">1</span>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="bg-white p-6 rounded-lg border-l-4 border-brand-primary shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+              <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-xl font-bold text-white">1</span>
               </div>
               <h3 className="text-subsection-title text-brand-primary mb-3">Initial Consultation</h3>
               <p className="text-body text-brand-gray">
                 Understanding your specific requirements and market needs through detailed consultation.
               </p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-white">2</span>
+            <div className="bg-white p-6 rounded-lg border-l-4 border-brand-secondary shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+              <div className="w-12 h-12 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-xl font-bold text-white">2</span>
               </div>
               <h3 className="text-subsection-title text-brand-primary mb-3">Market Research</h3>
               <p className="text-body text-brand-gray">
                 Comprehensive analysis of market conditions, pricing, and opportunities.
               </p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-white">3</span>
+            <div className="bg-white p-6 rounded-lg border-l-4 border-brand-primary shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+              <div className="w-12 h-12 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-xl font-bold text-white">3</span>
               </div>
               <h3 className="text-subsection-title text-brand-primary mb-3">Sourcing & Quality</h3>
               <p className="text-body text-brand-gray">
                 Identifying and verifying suppliers while ensuring quality standards.
               </p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-white">4</span>
+            <div className="bg-white p-6 rounded-lg border-l-4 border-brand-secondary shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+              <div className="w-12 h-12 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-xl font-bold text-white">4</span>
               </div>
               <h3 className="text-subsection-title text-brand-primary mb-3">Delivery & Support</h3>
               <p className="text-body text-brand-gray">
@@ -191,23 +196,24 @@ export default function Services() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Ready to Get Started? Section */}
       <section className="py-16 bg-brand-secondary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-section-title mb-4">Ready to Start Trading?</h2>
-          <p className="text-body-large mb-8 max-w-2xl mx-auto">
-            Contact our team to discuss your agro-commodities trading needs and discover how we can help.
+          <h2 className="text-section-title text-white mb-4">Ready to Get Started?</h2>
+          <p className="text-body-large text-white mb-8 max-w-2xl mx-auto">
+            Let our expert team help you navigate the agro-commodities market with our comprehensive services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="secondary" size="lg">
-              Get Started
+            <Button variant="default" size="lg" asChild className="transition-all duration-300">
+              <Link href="/work-with-us#business-inquiries">Start Your Project</Link>
             </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-brand-primary">
-              Learn More
+            <Button variant="outline" size="lg" asChild className="transition-all duration-300 border-white text-white hover:bg-white hover:text-brand-secondary">
+              <Link href="/services#our-process">Get Consultation</Link>
             </Button>
           </div>
         </div>
       </section>
+
     </div>
   )
 }
