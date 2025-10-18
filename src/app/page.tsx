@@ -31,9 +31,9 @@ export default function Home() {
               Leading Canadian multinational exporter connecting quality agricultural products with global markets across 9+ countries.
             </p>
             <div className="flex justify-center">
-            <Button variant="default" size="lg" asChild className="text-lg px-8 py-4 transition-all duration-300">
-              <Link href="/work-with-us#business-inquiries">Start Trading Today</Link>
-            </Button>
+              <Button variant="secondary" size="lg" asChild className="text-lg px-8 py-4 transition-all duration-300">
+                <Link href="/work-with-us#business-inquiries">Start Trading Today</Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -205,7 +205,7 @@ export default function Home() {
             <Button variant="default" size="lg" asChild className="transition-all duration-300">
               <Link href="/work-with-us#business-inquiries">Start Partnership</Link>
             </Button>
-            <Button variant="outline" size="lg" asChild className="transition-all duration-300 border-white text-white hover:bg-white hover:text-brand-primary">
+            <Button variant="outline" size="lg" asChild className="transition-all duration-300 border-white text-white hover:bg-white hover:text-brand-secondary">
               <Link href="/reach-us#quick-contact">Contact Us</Link>
             </Button>
           </div>
