@@ -30,9 +30,11 @@ export default function Home() {
             <p className="text-xl md:text-2xl text-white max-w-4xl mx-auto font-light mb-8">
               Leading Canadian multinational exporter connecting quality agricultural products with global markets across 9+ countries.
             </p>
-            <Button variant="secondary" size="lg" className="text-lg px-8 py-4">
-              Start Trading Today
-            </Button>
+            <div className="flex justify-center">
+              <Button variant="secondary" size="lg" asChild className="text-lg px-8 py-4 transition-all duration-300">
+                <Link href="/work-with-us#business-inquiries">Start Trading Today</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
