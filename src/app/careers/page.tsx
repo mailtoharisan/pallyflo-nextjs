@@ -339,7 +339,7 @@ export default function Careers() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-brand-secondary hover:bg-brand-secondary/90 text-white font-medium py-4 px-6 rounded-lg text-lg transition-colors duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-brand-primary hover:bg-brand-primary/90 text-white font-medium py-4 px-6 rounded-lg text-lg transition-colors duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <ArrowUp className="w-5 h-5 mr-2" />
                 {isSubmitting ? "Submitting..." : "Submit Application"}
@@ -352,7 +352,7 @@ export default function Careers() {
       </section>
 
       {/* Ready to Join Our Team? Section */}
-      <section className="py-16 bg-brand-secondary text-white">
+      <section className="py-16 bg-brand-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-section-title text-white mb-4">Ready to Join Our Team?</h2>
           <p className="text-body-large text-white mb-8 max-w-2xl mx-auto">
@@ -364,7 +364,7 @@ export default function Careers() {
             </Button>
             <Button variant="outline" size="lg" asChild className="transition-all duration-300 border-white text-white hover:bg-white hover:text-brand-primary">
               <Link href="/reach-us#quick-contact">Contact HR</Link>
-            </Button>
+          </Button>
           </div>
         </div>
       </section>

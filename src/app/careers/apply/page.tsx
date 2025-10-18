@@ -202,7 +202,7 @@ export default function CareerApplication() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-brand-secondary hover:bg-brand-secondary/90 text-white font-medium py-4 px-6 rounded-lg text-lg transition-colors duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-brand-primary hover:bg-brand-primary/90 text-white font-medium py-4 px-6 rounded-lg text-lg transition-colors duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <ArrowUp className="w-5 h-5 mr-2" />
               {isSubmitting ? "Submitting..." : "Submit Application"}

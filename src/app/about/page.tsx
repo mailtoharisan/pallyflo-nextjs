@@ -243,7 +243,7 @@ export default function About() {
       </section>
 
       {/* Ready to Partner With Us? Section */}
-      <section className="py-16 bg-brand-secondary text-white">
+      <section className="py-16 bg-brand-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-section-title text-white mb-4">Ready to Partner With Us?</h2>
           <p className="text-body-large text-white mb-8 max-w-2xl mx-auto">
