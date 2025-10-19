@@ -51,3 +51,4 @@ The following table will be created once the project is fully initialized:
 2. Get service role key from Supabase dashboard
 3. Update .env.local with the service role key
 4. Test the career application form
+
