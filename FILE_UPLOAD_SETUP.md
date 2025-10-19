@@ -105,3 +105,4 @@ Each application now includes:
 4. Test with smaller file first
 
 **The file upload system is now fully functional! Users can upload their resumes directly through the form, and files are securely stored in Supabase Storage.**
+

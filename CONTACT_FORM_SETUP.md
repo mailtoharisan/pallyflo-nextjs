@@ -126,3 +126,4 @@
 - **Data Analytics**: Analyze contact patterns and trends
 
 **The contact form is now fully functional and integrated into the Reach Us page! Users can send messages directly through the website, and all submissions are stored securely in Supabase.**
+
